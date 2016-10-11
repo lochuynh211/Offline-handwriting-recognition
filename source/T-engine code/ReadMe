@@ -1,0 +1,72 @@
+=========================================================
+               line drawing sample program
+             T-Kernel sample program
+  Copyright (C) 2002-2004 by Personal Media Corporation
+=========================================================
+
+* overview
+
+This is a simple drawing program with touch panel.
+
+* directory map
+
+src
+  directory of source program
+
+sh7727
+  directory to generate object for T-Engine/SH7727
+
+sh7751
+  directory to generate object for T-Engine/SH7751
+
+vr5500
+  directory to generate object for T-Engine/VR5500
+
+s1c38k
+  directory to generate object for T-Engine/ARM720-S1C
+
+mc9328
+  directory to generate object for T-Engine/ARM920-MX1
+
+mb87q1100
+  directory to generate object for T-Engine/ARM926-MB8
+
+tx4956
+  directory to generate object for T-Engine/TX4956
+
+* how to compile/execute
+
+Execute gmake on object generating directory
+to generate executable file drawsamp.
+
+Do as follows on CLI.
+(1) transfer executable file drawsamp to working disk
+(2) load and execute from working disk to memory by lodspg command
+(3) after termination, unload by unlspg command
+
+* behavior of the program
+
+- draw lines by touch panel.
+
+- [Clear] on LCD, or application switch SW2:
+  Erase all lines.
+
+- [Undo] on LCD, or application switch SW1-5:
+  Erase previously drawn line.
+
+- [Exit] on LCD, or application switch SW3:
+  Terminate program.
+
+* application switch SW1-5 is the middle
+  of the cross button on LCD board.
+
+* explanation for the program
+
+This is T-Kernel based program.
+
+Input from touch panel by kbpd device,
+and draw screen by SCREEN device.
+
+Line and character drawings are done by itself,
+because it use only T-Kernel functions.
+
